@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercice : Association de Couleurs et Émotions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+    .exercice-container {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .color-box {
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="exercice-container">
+    <h1>Exercice : Quelle émotion associez-vous à cette couleur ?</h1>
+    <div id="colorBox" class="color-box"></div>
+    <p>Sélectionnez l'émotion associée à cette couleur :</p>
+    <button onclick="checkAnswer('joie')">Joie</button>
+    <button onclick="checkAnswer('tristesse')">Tristesse</button>
+    <button onclick="checkAnswer('colère')">Colère</button>
+    <button onclick="checkAnswer('calme')">Calme</button>
+  </div>
+
+  <script>
+    const colors = {
+      rouge: { color: '#ff0000', emotion: 'colère' },
+      bleu: { color: '#0000ff', emotion: 'calme' },
+      jaune: { color: '#ffff00', emotion: 'joie' },
+      vert: { color: '#00ff00', emotion: 'calme' }
+    };
+
+    let currentColor = '';
+    let score = 0;
+
+    function generateColor() {
+      const colorNames = Object.keys(colors);
+      const randomColor = colorNames[Math.floor(Math.random() * colorNames.length)];
+      currentColor = colors[randomColor];
+      document.getElementById('colorBox').style.backgroundColor = currentColor.color;
+    }
+
+    function checkAnswer(selectedEmotion) {
+      if (selectedEmotion === currentColor.emotion) {
+        score++;
+        alert('Bonne réponse !');
+      } else {
+        alert('Mauvaise réponse !');
+      }
+      generateColor(); // Change the color after each answer
+    }
+
+    // Start the first color generation
+    generateColor();
+  </script>
+</body>
+</html>
