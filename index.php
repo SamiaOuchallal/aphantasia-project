@@ -11,7 +11,7 @@
 
     <section id="presentation">
         <h2>C'est quoi l'aphantasie ?</h2>
-        <p>L'aphantasie est une condition encore très mal connue de nos jours, environ 4% de la population en serait atteinte.
+        <p>L'aphantasie est une condition, découverte en 2015, encore très mal connue de nos jours, environ 4% de la population en serait atteinte.
             On appelle phantasie la capacité à visualiser des images mentales, dans sa tête. Pour une personne lambda, cela
             semble surement simple, le béaba de l'imagination. Mais figurez-vous que pour certaines personnes, c'est tout le 
             contraire ! L'aphantasie, par opposition, est l'incapacité totale à visualiser des images mentales.
@@ -32,6 +32,14 @@
             Cela signifie que ce n'est pas quelque chose qui peut être guéri, mais quelque chose qui peut être géré. 
             Il est possible de s'adapter à cette condition, et de trouver des solutions pour contourner les difficultés qu'elle peut poser.</p>
 
+    </section>
+
+    <section id="vviq">
+        <h2>Vous vous demandez si vous êtes dans ce cas ?</h2>
+        <p> Vous pouvez faire le <a id="ligne" href="https://en.wikipedia.org/wiki/Vividness_of_Visual_Imagery_Questionnaire">VVIQ (Vividness of Visual Imagery Questionnaire) </a>, 
+        un test qui permet de situer votre niveau de phantasie. </p>
+
+        <a href="https://aphantasia.com/study/vviq/" target="_blank">Faire le test VVIQ !</a>  
     </section>
 
 

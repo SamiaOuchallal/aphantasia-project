@@ -317,3 +317,36 @@ header img {
         text-align: center;
     }
 }
+
+#contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#ligne, #cn{
+    background-color: transparent;
+    padding: 0;
+    transition: none;
+    color: black;
+}
+
+#cn{
+    color: var(--primary-color);
+    padding: 0 20px;
+}
+
+
+#footer_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#footer_content li{
+    padding: 50px;
+}
