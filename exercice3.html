@@ -8,57 +8,62 @@
     <link rel="stylesheet" href="assets/css/style.css">
  
 </head>
-    <body>
-        <h2>Réorganise la séquence</h2>
-        <ul id="sequence">
-            <li class="item" draggable="true" data-order="3">Allumer la lumière</li>
-            <li class="item" draggable="true" data-order="1">Entrer dans la pièce</li>
-            <li class="item" draggable="true" data-order="2">Chercher l'interrupteur</li>
-        </ul>
-        <button onclick="verifierOrdre()">Vérifier</button>
-        <p id="resultat"></p>
-        
-        <script>
-            const items = document.querySelectorAll(".item");
-            let draggedItem = null;
+<body>
+    <h2>Réorganise la séquence</h2>
+    <ul id="sequence">
+        <li class="item" draggable="true" data-order="3">
+            <img src="allumer_lumiere.png" alt="Allumer la lumière">
+        </li>
+        <li class="item" draggable="true" data-order="1">
+            <img src="entrer_piece.png" alt="Entrer dans la pièce">
+        </li>
+        <li class="item" draggable="true" data-order="2">
+            <img src="chercher_interrupteur.png" alt="Chercher l'interrupteur">
+        </li>
+    </ul>
+    <button onclick="verifierOrdre()">Vérifier</button>
+    <p id="resultat"></p>
     
-            items.forEach(item => {
-                item.addEventListener("dragstart", (e) => {
-                    draggedItem = item;
-                    setTimeout(() => item.classList.add("dragging"), 0);
-                });
-                item.addEventListener("dragend", () => {
-                    draggedItem.classList.remove("dragging");
-                    draggedItem = null;
-                });
+    <script>
+        const items = document.querySelectorAll(".item");
+        let draggedItem = null;
+
+        items.forEach(item => {
+            item.addEventListener("dragstart", (e) => {
+                draggedItem = item;
+                setTimeout(() => item.classList.add("dragging"), 0);
             });
-    
-            const sequence = document.getElementById("sequence");
-            sequence.addEventListener("dragover", (e) => {
-                e.preventDefault();
-                const afterElement = getDragAfterElement(sequence, e.clientY);
-                if (afterElement == null) {
-                    sequence.appendChild(draggedItem);
-                } else {
-                    sequence.insertBefore(draggedItem, afterElement);
-                }
+            item.addEventListener("dragend", () => {
+                draggedItem.classList.remove("dragging");
+                draggedItem = null;
             });
-    
-            function getDragAfterElement(container, y) {
-                const draggableElements = [...container.querySelectorAll(".item:not(.dragging)")];
-                return draggableElements.reduce((closest, child) => {
-                    const box = child.getBoundingClientRect();
-                    const offset = y - box.top - box.height / 2;
-                    return offset < 0 && offset > closest.offset ? { offset, element: child } : closest;
-                }, { offset: Number.NEGATIVE_INFINITY }).element;
+        });
+
+        const sequence = document.getElementById("sequence");
+        sequence.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            const afterElement = getDragAfterElement(sequence, e.clientY);
+            if (afterElement == null) {
+                sequence.appendChild(draggedItem);
+            } else {
+                sequence.insertBefore(draggedItem, afterElement);
             }
-    
-            function verifierOrdre() {
-                const elements = [...document.querySelectorAll(".item")];
-                const correct = elements.every((el, index) => parseInt(el.dataset.order) === index + 1);
-                document.getElementById("resultat").textContent = correct ? "Bravo ! Ordre correct." : "Essaye encore.";
-            }
-        </script>
-    </body>
-    </html>
-    
+        });
+
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll(".item:not(.dragging)")];
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                return offset < 0 && offset > closest.offset ? { offset, element: child } : closest;
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }
+
+        function verifierOrdre() {
+            const elements = [...document.querySelectorAll(".item")];
+            const correct = elements.every((el, index) => parseInt(el.dataset.order) === index + 1);
+            document.getElementById("resultat").textContent = correct ? "Bravo ! Ordre correct." : "Essaye encore.";
+        }
+    </script>
+</body>
+</html>
