@@ -57,14 +57,10 @@
         ]
     ];
 
-    // Sélection aléatoire d'une situation
     const randomSituation = situations[Math.floor(Math.random() * situations.length)];
 
-    // Mélanger les images pour l'affichage
     const shuffledImages = [...randomSituation].sort(() => Math.random() - 0.5);
 
-    // Affichage des images
-    const sequence = document.getElementById("sequence");
     shuffledImages.forEach(item => {
         let li = document.createElement("li");
         li.classList.add("item");
