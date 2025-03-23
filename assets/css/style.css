@@ -28,8 +28,6 @@ body {
     line-height: 1.6;
     padding-top: 80px;
     display: block;
-    min-height: 100%;
-    position: relative;
 }
 
 /* HEADER */
@@ -427,6 +425,7 @@ button:hover {
 p#resultat{
     text-align: center;
     margin: 10px;
+    font-size: 1.4em;
 }
 
 .error {
@@ -437,4 +436,11 @@ p#resultat{
 .success {
     border: 2px solid green;
     background-color: #ccffcc;
+}
+
+
+/* contact */
+
+li{
+    list-style: none;
 }
