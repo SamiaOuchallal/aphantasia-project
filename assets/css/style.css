@@ -47,7 +47,8 @@ header h1 {
 h1{
     color: var(--primary-color);
     text-align: center;
-    font-size: 18px;
+    font-size: 1.7em;
+    margin-top: 10px;
 }
 
 /* MENU */
@@ -195,12 +196,14 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 15px 10px;
-    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 footer a {
     color: var(--white);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 footer a:hover {
@@ -351,6 +354,8 @@ header img {
     justify-content: center;
     padding-left: 5px;
     padding-right: 5px;
+    list-style: none;
+
 }
 
 #footer_content li{
@@ -392,7 +397,7 @@ header img {
 button {
     display: block;
     margin: 20px auto;
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -401,5 +406,11 @@ button {
 }
 
 button:hover {
-    background-color: #004D4C;
+    background-color: var(--secondary-color);
+}
+
+
+.consigne{
+    text-align: center;
+    margin: 10px;
 }
