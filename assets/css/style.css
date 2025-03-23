@@ -44,6 +44,12 @@ header h1 {
     font-size: 24px;
 }
 
+h1{
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 18px;
+}
+
 /* MENU */
 nav ul {
     list-style: none;
