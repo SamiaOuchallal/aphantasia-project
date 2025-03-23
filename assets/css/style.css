@@ -350,3 +350,15 @@ header img {
 #footer_content li{
     padding: 50px;
 }
+
+/* Exercice 3 */
+
+#sequence{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#sequence .item{
+    margin: 10px
+}
