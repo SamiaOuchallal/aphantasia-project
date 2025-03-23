@@ -42,41 +42,45 @@
 <p id="resultat"></p>
 
 <script>
-    const situations = [
-        [ // Situation 1
-            { src: "/assets/img/exercice3/interrupteur_4.png", order: 4 },
-            { src: "/assets/img/exercice3/interrupteur_2.png", order: 2 },
-            { src: "/assets/img/exercice3/interrupteur_1.png", order: 1 },
-            { src: "/assets/img/exercice3/interrupteur_3.png", order: 3 },
+   const situations = [
+    [ // Situation 1
+        { src: "/assets/img/exercice3/interrupteur_4.png", order: 4 },
+        { src: "/assets/img/exercice3/interrupteur_2.png", order: 2 },
+        { src: "/assets/img/exercice3/interrupteur_1.png", order: 1 },
+        { src: "/assets/img/exercice3/interrupteur_3.png", order: 3 },
+    ],
+    [ // Situation 2
+        { src: "ouvrir_livre.png", order: 1 },
+        { src: "lire_page.png", order: 2 },
+        { src: "fermer_livre.png", order: 3 }
+    ]
+];
 
-        ],
-        [ // Situation 2
-            { src: "ouvrir_livre.png", order: 1 },
-            { src: "lire_page.png", order: 2 },
-            { src: "fermer_livre.png", order: 3 }
-        ]
-    ];
+const randomSituation = situations[Math.floor(Math.random() * situations.length)];
 
-    const randomSituation = situations[Math.floor(Math.random() * situations.length)];
+const shuffledImages = [...randomSituation].sort(() => Math.random() - 0.5);
 
-    const shuffledImages = [...randomSituation].sort(() => Math.random() - 0.5);
+// Définir "sequence" avant d'ajouter des éléments
+const sequence = document.getElementById("sequence");
 
-    shuffledImages.forEach(item => {
-        let li = document.createElement("li");
-        li.classList.add("item");
-        li.setAttribute("draggable", "true");
-        li.setAttribute("data-order", item.order);
+// Ajouter les éléments après avoir défini "sequence"
+shuffledImages.forEach(item => {
+    let li = document.createElement("li");
+    li.classList.add("item");
+    li.setAttribute("draggable", "true");
+    li.setAttribute("data-order", item.order);
 
-        let img = document.createElement("img");
-        img.src = item.src;
-        img.alt = "Image de séquence";
+    let img = document.createElement("img");
+    img.src = item.src;
+    img.alt = "Image de séquence";
 
-        li.appendChild(img);
-        sequence.appendChild(li);
-    });
+    li.appendChild(img);
+    sequence.appendChild(li);
+});
 
-    const items = document.querySelectorAll(".item");
 let draggedItem = null;
+
+const items = document.querySelectorAll(".item");
 
 items.forEach(item => {
     item.addEventListener("dragstart", (e) => {
@@ -89,7 +93,6 @@ items.forEach(item => {
     });
 });
 
-const sequence = document.getElementById("sequence");
 sequence.addEventListener("dragover", (e) => {
     e.preventDefault();
     const afterElement = getDragAfterElement(sequence, e.clientY);
