@@ -35,19 +35,83 @@
     </header>
 
 
+    
+<h1>Souviens-toi de la scène !</h1>
+<p class="consigne"> Attention ! L'image suivante va disparaître prochainement ! Essaye de t'en souvenir pour répondre aux questions.</p>
+
+<div id="scene-container">
+    <img id="scene-image" src="/assets/img/aphantasia_logo.png" alt="Scene" style="display: none;">
+</div>
+
+
+<div id="qcm-container" style="display: none;">
+    <h3>Questions :</h3>
+    <form id="qcm-form">
+        <label>1. Quelle action principale se déroulait dans la scène ?</label><br>
+        <input type="radio" name="action" value="Action 1"> Action 1<br>
+        <input type="radio" name="action" value="Action 2"> Action 2<br>
+        <input type="radio" name="action" value="Action 3"> Action 3<br>
+
+        <label>2. Quels objets spéciaux étaient présents ?</label><br>
+        <input type="checkbox" name="objets" value="Objet 1"> Objet 1<br>
+        <input type="checkbox" name="objets" value="Objet 2"> Objet 2<br>
+        <input type="checkbox" name="objets" value="Objet 3"> Objet 3<br>
+
+        <label>3. Quelle couleur dominait la scène ?</label><br>
+        <input type="radio" name="couleur" value="Rouge"> Rouge<br>
+        <input type="radio" name="couleur" value="Bleu"> Bleu<br>
+        <input type="radio" name="couleur" value="Vert"> Vert<br>
+
+        <button type="button" onclick="checkAnswers()">Vérifier</button>
+    </form>
+</div>
 
 <footer>
     <p>Créé par OUCHALLAL Samia, 2025</p>
-
     <ul id="footer_content">
-        <li> <a href="/index.html"> Mes pages  </a> </li>
+        <li> <a href="/index.html"> Mes pages </a> </li>
         <li> <a href="/#exercices"> Nos exercices </a> </li>
         <li> <a href="/contact.html"> Me contacter ! </a> </li>
     </ul>
-    
-
 </footer>
 
-<script src="script.js"></script>
-</body>
-</html>
+<script>
+    window.onload = () => {
+        const image = document.getElementById("scene-image");
+        const qcmContainer = document.getElementById("qcm-container");
+        
+        image.style.display = "block";
+
+        // Après 10 secondes, cacher l'image et afficher le QCM
+        setTimeout(() => {
+            image.style.display = "none";
+            qcmContainer.style.display = "block";
+        }, 10000);
+    };
+
+    function checkAnswers() {
+        const action = document.querySelector('input[name="action"]:checked');
+        const objets = document.querySelectorAll('input[name="objets"]:checked');
+        const couleur = document.querySelector('input[name="couleur"]:checked');
+
+        let result = "Réponses :\n";
+        
+        if (action) result += `Action : ${action.value}\n`;
+        else result += "Action : Aucune réponse\n";
+        
+        if (objets.length > 0) {
+            result += "Objets : ";
+            objets.forEach(checkbox => {
+                result += checkbox.value + " ";
+            });
+            result += "\n";
+        } else {
+            result += "Objets : Aucune réponse\n";
+        }
+        
+        if (couleur) result += `Couleur : ${couleur.value}\n`;
+        else result += "Couleur : Aucune réponse\n";
+
+        alert(result);
+    }
+</script>
