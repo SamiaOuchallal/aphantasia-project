@@ -21,7 +21,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    padding-top: 80px; /* Espace sous le header fixe */
+    padding-top: 80px;
 }
 
 /* HEADER */
@@ -367,15 +367,15 @@ header img {
 #sequence {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espacement entre les images */
+    gap: 20px;
     list-style: none;
     padding: 20px;
 }
 
 #sequence .item {
-    width: 150px; /* Taille des images */
-    height: 150px;
-    border: 2px solid #006E6D; /* Bordure pour bien les voir */
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--primary-color);
     border-radius: 10px;
     background-color: #f5f5f5;
     display: flex;
@@ -413,4 +413,19 @@ button:hover {
 .consigne{
     text-align: center;
     margin: 10px;
+}
+
+p#resultat{
+    text-align: center;
+    margin: 10px;
+}
+
+.error {
+    border: 2px solid red;
+    background-color: #ffcccc;
+}
+
+.success {
+    border: 2px solid green;
+    background-color: #ccffcc;
 }

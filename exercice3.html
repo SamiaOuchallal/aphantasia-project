@@ -114,8 +114,21 @@ function getDragAfterElement(container, y) {
 function verifierOrdre() {
     const elements = [...document.querySelectorAll(".item")];
     const correct = elements.every((el, index) => parseInt(el.dataset.order) === index + 1);
-    document.getElementById("resultat").textContent = correct ? "Bravo ! Ordre correct." : "Essaye encore.";
+    
+    const resultElement = document.getElementById("resultat");
+    const sequenceElement = document.getElementById("sequence");
+
+    if (correct) {
+        resultElement.textContent = "Bravo ! Ordre correct.";
+        sequenceElement.classList.remove("error");
+        sequenceElement.classList.add("success");
+    } else {
+        resultElement.textContent = "Essaye encore.";
+        sequenceElement.classList.remove("success");
+        sequenceElement.classList.add("error");
+    }
 }
+
 
 </script>
 
