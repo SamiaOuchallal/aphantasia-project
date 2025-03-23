@@ -6,111 +6,131 @@
     <title>Réorganiser la séquence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/style.css">
- 
 </head>
 <body>
 
+<header>
+    <a href="index.html"> <img src="assets/img/aphantasia_logo2.jpeg"> </a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li>
+                <a>Exercices</a>
+                <ul class="submenu">
+                    <li><a href="exercice1.html">Exercice 1 : Mémoire auditive</a></li>
+                    <li><a href="exercice2.html">Exercice 2 : Description de scène</a></li>
+                    <li><a href="exercice3.html">Exercice 3 : Réorganiser la séquence</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>Aide</a>
+                <ul class="submenu">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </li>
+            <li><a href="a_propos.html">À propos</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <header>
-        <a href="index.html"> <img src="assets/aphantasia_logo2.jpeg"> </a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li>
-                    <a>Exercices</a>
-                    <ul class="submenu">
-                        <li><a href="exercice1.html">Exercice 1 : Mémoire auditive</a></li>
-                        <li><a href="exercice2.html">Exercice 2 : Description de scène</a></li>
-                        <li><a href="exercice3.html">Exercice 3 : Réorganiser la séquence</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a>Aide</a>
-                    <ul class="submenu">
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </li>
-                <li><a href="a_propos.html">À propos</a></li>
-            </ul>
-        </nav>
-    </header>
- 
+<h2>Réorganise la séquence</h2>
+<ul id="sequence"></ul>
+<button onclick="verifierOrdre()">Vérifier</button>
+<p id="resultat"></p>
 
+<script>
+    const situations = [
+        [ // Situation 1
+            { src: "/assets/img/exercice3/interrupteur_1.png", order: 1 },
+            { src: "/assets/img/exercice3/interrupteur_2.png", order: 2 },
+            { src: "/assets/img/exercice3/interrupteur_3.png", order: 3 },
+            { src: "/assets/img/exercice3/interrupteur_4.png", order: 4 }
 
+        ],
+        [ // Situation 2
+            { src: "casser_oeuf.png", order: 1 },
+            { src: "melanger_oeuf.png", order: 2 },
+            { src: "cuire_omelette.png", order: 3 }
+        ],
+        [ // Situation 3
+            { src: "ouvrir_livre.png", order: 1 },
+            { src: "lire_page.png", order: 2 },
+            { src: "fermer_livre.png", order: 3 }
+        ]
+    ];
 
+    // Sélection aléatoire d'une situation
+    const randomSituation = situations[Math.floor(Math.random() * situations.length)];
 
+    // Mélanger les images pour l'affichage
+    const shuffledImages = [...randomSituation].sort(() => Math.random() - 0.5);
 
-    <h2>Réorganise la séquence</h2>
-    <ul id="sequence">
-        <li class="item" draggable="true" data-order="3">
-            <img src="allumer_lumiere.png" alt="Allumer la lumière">
-        </li>
-        <li class="item" draggable="true" data-order="1">
-            <img src="entrer_piece.png" alt="Entrer dans la pièce">
-        </li>
-        <li class="item" draggable="true" data-order="2">
-            <img src="chercher_interrupteur.png" alt="Chercher l'interrupteur">
-        </li>
-    </ul>
-    <button onclick="verifierOrdre()">Vérifier</button>
-    <p id="resultat"></p>
-    
-    <script>
-        const items = document.querySelectorAll(".item");
-        let draggedItem = null;
+    // Affichage des images
+    const sequence = document.getElementById("sequence");
+    shuffledImages.forEach(item => {
+        let li = document.createElement("li");
+        li.classList.add("item");
+        li.setAttribute("draggable", "true");
+        li.setAttribute("data-order", item.order);
 
-        items.forEach(item => {
-            item.addEventListener("dragstart", (e) => {
-                draggedItem = item;
-                setTimeout(() => item.classList.add("dragging"), 0);
-            });
-            item.addEventListener("dragend", () => {
-                draggedItem.classList.remove("dragging");
-                draggedItem = null;
-            });
+        let img = document.createElement("img");
+        img.src = item.src;
+        img.alt = "Image de séquence";
+
+        li.appendChild(img);
+        sequence.appendChild(li);
+    });
+
+    // Drag & Drop
+    const items = document.querySelectorAll(".item");
+    let draggedItem = null;
+
+    items.forEach(item => {
+        item.addEventListener("dragstart", () => {
+            draggedItem = item;
+            setTimeout(() => item.classList.add("dragging"), 0);
         });
-
-        const sequence = document.getElementById("sequence");
-        sequence.addEventListener("dragover", (e) => {
-            e.preventDefault();
-            const afterElement = getDragAfterElement(sequence, e.clientY);
-            if (afterElement == null) {
-                sequence.appendChild(draggedItem);
-            } else {
-                sequence.insertBefore(draggedItem, afterElement);
-            }
+        item.addEventListener("dragend", () => {
+            draggedItem.classList.remove("dragging");
+            draggedItem = null;
         });
+    });
 
-        function getDragAfterElement(container, y) {
-            const draggableElements = [...container.querySelectorAll(".item:not(.dragging)")];
-            return draggableElements.reduce((closest, child) => {
-                const box = child.getBoundingClientRect();
-                const offset = y - box.top - box.height / 2;
-                return offset < 0 && offset > closest.offset ? { offset, element: child } : closest;
-            }, { offset: Number.NEGATIVE_INFINITY }).element;
+    sequence.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const afterElement = getDragAfterElement(sequence, e.clientY);
+        if (afterElement == null) {
+            sequence.appendChild(draggedItem);
+        } else {
+            sequence.insertBefore(draggedItem, afterElement);
         }
+    });
 
-        function verifierOrdre() {
-            const elements = [...document.querySelectorAll(".item")];
-            const correct = elements.every((el, index) => parseInt(el.dataset.order) === index + 1);
-            document.getElementById("resultat").textContent = correct ? "Bravo ! Ordre correct." : "Essaye encore.";
-        }
-    </script>
+    function getDragAfterElement(container, y) {
+        const draggableElements = [...container.querySelectorAll(".item:not(.dragging)")];
+        return draggableElements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            return offset < 0 && offset > closest.offset ? { offset, element: child } : closest;
+        }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
 
+    function verifierOrdre() {
+        const elements = [...document.querySelectorAll(".item")];
+        const correct = elements.every((el, index) => parseInt(el.dataset.order) === index + 1);
+        document.getElementById("resultat").textContent = correct ? "Bravo ! Ordre correct." : "Essaye encore.";
+    }
+</script>
 
 <footer>
     <p>Créé par OUCHALLAL Samia, 2025</p>
-
     <ul id="footer_content">
         <li> <a href="/index.html"> Mes pages  </a> </li>
         <li> <a href="/#exercices"> Nos exercices </a> </li>
         <li> <a href="/contact.html"> Me contacter ! </a> </li>
     </ul>
-    
-
 </footer>
-
 
 </body>
 </html>
