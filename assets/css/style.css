@@ -219,7 +219,7 @@ section#exercices {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: white;
     border-radius: 6px;
     text-decoration: none;
