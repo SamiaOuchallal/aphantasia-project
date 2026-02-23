@@ -115,7 +115,7 @@ nav ul li:hover .submenu {
 /* SECTIONS */
 section {
     padding: 50px 20px;
-    max-width: 90vw;
+    max-width: 95vw;
     margin: auto;
     background: var(--white);
     border-radius: 8px;
@@ -195,7 +195,6 @@ section#home{
     margin-top: 40px;
     height: 80vh;
     justify-content: center;
-    width: 90vw;
 }
 
 section#presentation{
