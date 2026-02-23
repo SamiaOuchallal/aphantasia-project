@@ -3,7 +3,7 @@
 
 :root {
     --primary-color: #5C5792;
-    --secondary-color: #BE9CC7;
+    --secondary-color: #2a0d43;
     --text-color: #211A44;
     --bg-color: #9F8DC3;
     --white: #e3e3e3;
@@ -82,6 +82,7 @@ nav a {
 
 nav a:hover {
     background: var(--secondary-color);
+    color: #000;
     border-radius: 5px;
 }
 
