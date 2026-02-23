@@ -3,10 +3,10 @@
 
 :root {
     --primary-color: #DAAB3A;
-    --secondary-color: #2C3E50;
+    --secondary-color: #000;
     --text-color: #4A4A4A;
-    --bg-color: #EEE6D8;
-    --white: #fff;
+    --bg-color: #B67332;
+    --white: #EEE6D8;
 }
 
 /* Reset et base */
