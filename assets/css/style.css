@@ -219,7 +219,7 @@ section#exercices {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     color: white;
     border-radius: 6px;
     text-decoration: none;
@@ -228,7 +228,7 @@ section#exercices {
 }
 
 .btn:hover {
-    background: var(--primary-color-dark);
+    background: var(--secondary-color);
 }
 
 
