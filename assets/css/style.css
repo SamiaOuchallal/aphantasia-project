@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-    --primary-color: #006E8E;
+    --primary-color: #137C8B;
     --secondary-color: #2C3E50;
     --text-color: #4A4A4A;
     --bg-color: #E0F2F1;
@@ -211,7 +211,8 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: auto;
+    margin-top: 10vh;
+
 }
 
 footer a {
