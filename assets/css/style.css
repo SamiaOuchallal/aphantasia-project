@@ -187,9 +187,26 @@ section a {
     transition: background 0.3s ease-in-out;
 }
 
-div#exercice\ exercice1, div#exercice\ exercice2{
-    margin-bottom: 20px;
+#exerices{
+    background-color: var(--bg-color);
 }
+
+
+div#exercice\ exercice1, div#exercice\ exercice2{
+    margin-bottom: 50px;
+}
+
+div#exercice\ exercice1, div#exercice\ exercice2, div#exercice\ exercice3{ 
+    padding: 50px 20px;
+    max-width: 95vw;
+    margin: auto;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
 
 section a:hover {
     background: var(--secondary-color);
