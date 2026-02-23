@@ -187,26 +187,48 @@ section a {
     transition: background 0.3s ease-in-out;
 }
 
-section#exercices{
+section#exercices {
     background-color: var(--bg-color);
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
-
-div#exercice\ exercice1, div#exercice\ exercice2{
-    margin-bottom: 50px;
-}
-
-div#exercice\ exercice1, div#exercice\ exercice2, div#exercice\ exercice3{ 
-    /*padding: 50px 20px;*/
-    max-width: 95vw;
-    margin: auto;
+.card {
     background: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
     margin-bottom: 20px;
-    margin-top: 10px;
+    font-size: 1.4rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--primary-color-dark);
 }
 
 
