@@ -191,9 +191,10 @@ section#exercices {
     background-color: var(--bg-color);
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 80px;
     justify-content: center;
     padding: 20px;
+    box-shadow: none;
 }
 
 .card {
