@@ -3,7 +3,7 @@
 
 :root {
     --primary-color: #5C5792;
-    --secondary-color: #2a0d43;
+    --secondary-color: #BE9CC7;
     --text-color: #211A44;
     --bg-color: #9F8DC3;
     --white: #e3e3e3;
@@ -82,7 +82,7 @@ nav a {
 
 nav a:hover {
     background: var(--secondary-color);
-    color: #000;
+    color: #2a0d43;
     border-radius: 5px;
 }
 
@@ -106,11 +106,13 @@ nav a:hover {
 
 .submenu a:hover {
     background: var(--secondary-color);
+    color: #2a0d43;
 }
 
 /* Affichage du sous-menu au survol */
 nav ul li:hover .submenu {
     display: block;
+    color: #2a0d43;
 }
 
 /* SECTIONS */
@@ -187,6 +189,7 @@ section a {
 
 section a:hover {
     background: var(--secondary-color);
+    color: #2a0d43;
 }
 
 /* SECTION HOME */
@@ -292,11 +295,13 @@ footer a:hover {
 
 .submenu li a:hover {
     background-color: var(--secondary-color);
+    color: #2a0d43;
 }
 
 /* Afficher le sous-menu au survol */
 .menu li:hover .submenu {
     display: block;
+    color: #2a0d43;
 }
 
 
@@ -422,6 +427,7 @@ button {
 
 button:hover {
     background-color: var(--secondary-color);
+    color: #2a0d43;
 }
 
 
