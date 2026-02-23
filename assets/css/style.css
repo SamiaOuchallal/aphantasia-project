@@ -4,9 +4,9 @@
 :root {
     --primary-color: #DAAB3A;
     --secondary-color: #000;
-    --text-color: #4A4A4A;
-    --bg-color: #B67332;
-    --white: #EEE6D8;
+    --text-color: /*#4A4A4A*/ #B67332;
+    --bg-color: #EEE6D8;
+    --white: #e5e7e6;
 }
 
 /* Reset et base */
