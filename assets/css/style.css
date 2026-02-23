@@ -149,10 +149,12 @@ a.bouton_accueil{
 }
 
 
-#aphantasie{
+/*#aphantasie{
     visibility: hidden;
 
-}
+}*/
+
+
 /* TITRES */
 h2 {
     color: var(--primary-color);
@@ -195,6 +197,11 @@ section#home{
     justify-content: center;
     width: 90vw;
 }
+
+section#presentation{
+    padding-top: 100px;
+}
+
 
 /* FOOTER */
 footer {
