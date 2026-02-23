@@ -187,6 +187,10 @@ section a {
     transition: background 0.3s ease-in-out;
 }
 
+div#exercice\ exercice1, div#exercice\ exercice2{
+    margin-bottom: 20px;
+}
+
 section a:hover {
     background: var(--secondary-color);
     color: #2a0d43;
