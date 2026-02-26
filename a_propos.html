@@ -57,20 +57,10 @@
     </main>
 
 
+<div id="footer"></div>
 
-
-    <footer>
-        <p>Créé par OUCHALLAL Samia, 2025</p>
-
-        <ul id="footer_content">
-            <li> <a href="/index.html"> Mes pages  </a> </li>
-            <li> <a href="/#exercices"> Nos exercices </a> </li>
-            <li> <a href="/contact.html"> Me contacter ! </a> </li>
-        </ul>
-        
-
-</footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<script>
+  fetch("footer.html")
+    .then(r => r.text())
+    .then(t => document.getElementById("footer").innerHTML = t);
+</script>

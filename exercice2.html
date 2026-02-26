@@ -67,15 +67,6 @@
     </form>
 </div>
 
-<footer>
-    <p>Créé par OUCHALLAL Samia, 2025</p>
-    <ul id="footer_content">
-        <li> <a href="/index.html"> Mes pages </a> </li>
-        <li> <a href="/#exercices"> Nos exercices </a> </li>
-        <li> <a href="/contact.html"> Me contacter ! </a> </li>
-    </ul>
-</footer>
-
 <script>
     window.onload = () => {
         const image = document.getElementById("scene-image");
@@ -115,4 +106,12 @@
 
         alert(result);
     }
+</script>
+
+<div id="footer"></div>
+
+<script>
+  fetch("footer.html")
+    .then(r => r.text())
+    .then(t => document.getElementById("footer").innerHTML = t);
 </script>
