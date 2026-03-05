@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réorganiser la séquence</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/favicon.ico">
+</head>
+<body>
+
+<header>
+    <a href="index.html"> <img src="assets/img/aphantasia_logo.png"> </a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li>
+                <a>Exercices</a>
+                <ul class="submenu">
+                    <li><a href="exercice1.html">Niveau 1 : Mémoire auditive</a></li>
+                    <li><a href="exercice2.html">Niveau 2 : Description de scène</a></li>
+                    <li><a href="exercice3.html">Niveau 3 : Réorganiser la séquence</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>Aide</a>
+                <ul class="submenu">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </li>
+            <li><a href="a_propos.html">À propos</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<div id="footer"></div>
+
+<script>
+  fetch("footer.html")
+    .then(r => r.text())
+    .then(t => document.getElementById("footer").innerHTML = t);
+</script>

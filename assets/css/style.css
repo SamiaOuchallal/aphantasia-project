@@ -132,7 +132,6 @@ section {
     height: auto;
     margin: 0 auto;
     align-self: center;
-    margin-bottom: 10px;
 }
 
 
@@ -150,13 +149,6 @@ a.bouton_accueil{
     transition: background 0.3s ease-in-out;
     scroll-behavior: smooth;
 }
-
-
-/*#aphantasie{
-    visibility: hidden;
-
-}*/
-
 
 /* TITRES */
 h2 {
@@ -429,33 +421,6 @@ header img {
     padding: 50px;
 }
 
-/* Exercice 3 */
-
-#sequence {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    padding: 20px;
-}
-
-#sequence .item {
-    width: 200px;
-    height: 200px;
-    border: 2px solid var(--primary-color);
-    border-radius: 10px;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: grab;
-}
-
-#sequence .item img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
 
 .dragging {
     opacity: 0.5;
