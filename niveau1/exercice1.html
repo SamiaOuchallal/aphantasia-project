@@ -1,0 +1,25 @@
+ <link rel="stylesheet" href="../assets/css/style.css">  
+ <div id="header"></div>
+
+<script>
+  fetch("../header.html")
+    .then(r => r.text())
+    .then(t => document.getElementById("header").innerHTML = t);
+</script>
+
+
+
+    <section id="exo1">
+        <h2>Décrire un objet</h2>
+        <a class="bouton_lancer"> Jouer !</a>
+    </section>
+
+
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(r => r.text())
+    .then(t => document.getElementById("footer").innerHTML = t);
+</script>
