@@ -1,39 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aphantasia Project</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="assets/img/favicon.png">
-    
+  <link rel="stylesheet" href="assets/css/style.css">  
+  <div id="header"></div>
 
-</head>
-<body>
-    <header>
-        <a href="index.html"> <img src="assets/img/aphantasia_logo.png"> </a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li>
-                    <a>Exercices</a>
-                    <ul class="submenu">
-                        <li><a href="niveau1.html">Niveau 1 : Bases</a></li>
-                        <li><a href="niveau2.html">Niveau 2 : Mémoire</a></li>
-                        <li><a href="niveau3.html">Niveau 3 : Sensation</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a>Aide</a>
-                    <ul class="submenu">
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </li>
-                <li><a href="a_propos.html">À propos</a></li>
-            </ul>
-        </nav>
-    </header>
+<script>
+  fetch("header.html")
+    .then(r => r.text())
+    .then(t => document.getElementById("header").innerHTML = t);
+</script>
+
+
+  <div id="footer"></div>
+
+
 
 <section id="faq_presentation">
     <h2>FAQ</h2>
