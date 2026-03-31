@@ -21,35 +21,75 @@
         
     </section>
 
-    <section id="debut_exo">
+    <section>
+      <div id="debut_exo" hidden="until-found">
       
-      <h4><strong> Visualiser et cacher votre objet .</strong> </h4>
+        <h4><strong> Visualiser et cacher votre objet .</strong> </h4>
         
-        <p>Quand vous serez prêt appuier sur ce bouton</p>
+          <p>Quand vous serez prêt appuier sur ce bouton</p>
         
-        <a class="bouton_lancer" href="#milieu_exo"> En Route ! </a>
-
+          <a class="bouton_lancer" href="#milieu_exo"> En Route ! </a>
+      </div>
     </section>
 
-    <section id="milieu_exo">
-      
-      <ul>
-        <il>pense a ça couleurs</il>
-        <il>pense a ça forme</il>
-        <il>pense a ça taille</il>
-        <il>pense a sont utiliter</il>
-        <il>pense a ça texture</il>
-        <il>pense a l'objet</il>
-      </ul>
-      
-      <p>Si tu a reussi sans aide tu peut passer a l'exercice suivant. </p>
+    <section>
+      <div id="milieu_exo" hidden="until-found">
+      <p><ul>
         
-        <a class="bouton_lancer" href="/niveau1/exercice2.html"> Bien jouer ^^ </a>
+          <li>pense a ça couleurs
+            <a class="btn_Question" href="#Question_2"> Question suivante</a>
+          </li>
+        </div>
+        
+        <div id=Question_2 hidden="until-found">
+          <li>pense a ça forme
+            <a class="btn_Question" href="#Question_3">Question suivante</a>
+          </li>
+        </div>
+        
+        <div id=Question_3 hidden="until-found">
+          <li>pense a ça taille
+            <a class="btn_Question" href="#Question_4">Question suivante</a>
+          </li>
+        </div>
+        
+        <div id=Question_4 hidden="until-found">
+          <li>pense a sont utiliter
+            <a class="btn_Question" href="#Question_5">Question suivante</a>
+          </li>
+        </div>
+        
+        <div id=Question_5 hidden="until-found">
+          <li>pense a ça texture
+            <a class="btn_Question" href="#Question_6">Question suivante</a>
+          </li>
+        </div>
 
+        <div id=Question_6 hidden="until-found">
+          <li>pense a l'objet
+            <a class="btn_Question" href="#Question_7">Question suivante</a>
+          </li>
+        </div>
+
+        <div id=Question_7 hidden="until-found">
+          <li>pense a sont materiaux principal
+            <a class="btn_Question" href="#Question_8">Question suivante</a>
+          </li>
+        </div>
+      </ul></p>
+      
+      <div id=Question_8 hidden="until-found">
+          <p>Si tu a reussi sans aide tu peut passer a l'exercice suivant. 
+        </p>
+      
+        
+        <a class="bouton_lancer" href="niveau1_exo2/niveau1/exercice2.html"> Bien jouer ^^ </a>
+      </div>
     </section>
     
 
-<div id="footer"></div>
+
+    <div id="footer"></div>
 
 <script>
   fetch("../footer.html")

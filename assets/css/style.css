@@ -150,6 +150,22 @@ a.bouton_accueil{
     scroll-behavior: smooth;
 }
 
+a.btn_Question{
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: start;
+    padding: 0;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.3s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+
 /* TITRES */
 h2 {
     color: var(--primary-color);
@@ -220,6 +236,7 @@ section#exercices {
     font-weight: bold;
     transition: background 0.2s ease;
 }
+
 
 .btn:hover {
     background: var(--secondary-color);
