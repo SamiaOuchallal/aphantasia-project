@@ -151,16 +151,16 @@ a.bouton_accueil{
 }
 
 a.btn_Question{
-    display: block;
-    width: 20%;
-    margin: 0 auto;
+    display: inline-block;
+    width: auto;
+    margin: auto;
     margin-top: 10px;
-    text-align: start;
+    text-align: center;
     padding: 0;
     background: var(--primary-color);
     color: var(--white);
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 20px;
     transition: background 0.3s ease-in-out;
     scroll-behavior: smooth;
 }
