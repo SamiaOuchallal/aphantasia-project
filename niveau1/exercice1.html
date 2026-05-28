@@ -7,12 +7,93 @@
     .then(t => document.getElementById("header").innerHTML = t);
 </script>
 
-
+<body>
     <section id="exo1">
-        <h2>Décrire un objet</h2>
-        <a class="bouton_lancer"> Jouer !</a>
+      <div align>
+        <center>
+          <h2>Décrire un objet</h2>
+      
+          <p>Pour ce premier exercice nous allons vous demander de <strong>prendre un objet de chez vous et de le visualiser.</strong> </p>
+          <p>Ensuite <strong>cachez le de votre regard.</strong> </p>
+          <p>Pour finir nous allons vous poser des <strong>caractreristique</strong> de cette objet </p>
+          <p>A vous de voir si vous arrivé a les pensées </p>
+          <p><strong>Bon courage</strong> </p>
+      
+          <a class="bouton_lancer" href="#debut_exo"> Jouer ! </a>
+        </center>
+      </div> 
     </section>
 
+  <div id="debut_exo" hidden="until-found">
+    <section>
+      <div align>
+        <center>
+          <h4><strong> Visualiser et cacher votre objet .</strong> </h4>
+          <p>Quand vous serez prêt appuier sur ce bouton</p>
+          <a class="bouton_lancer" href="#milieu_exo"> En Route ! </a>
+        </center>
+      </div>
+    </section>
+  </div>
+    
+    <section id="exercices">
+      <div id="milieu_exo" hidden="until-found">  
+        <div class="card">
+          <p>pense a ça couleurs</p>
+            <a class="btn_Question" href="#Question_2"> Question suivante</a>
+        </div>
+      </div>
+          
+      <div id=Question_2 hidden="until-found">
+        <div class="card">
+          <p>pense a ça forme</p>
+            <a class="btn_Question" href="#Question_3">Question suivante</a>
+        </div>
+      </div>
+          
+      <div id=Question_3 hidden="until-found">
+        <div class="card">
+          <p>pense a ça taille</p>
+            <a class="btn_Question" href="#Question_4">Question suivante</a> 
+        </div>
+      </div>
+          
+      <div id=Question_4 hidden="until-found">
+        <div class="card">
+          <p>pense a sont utiliter</p>
+            <a class="btn_Question" href="#Question_5">Question suivante</a>
+        </div>
+      </div>
+      
+      <div id=Question_5 hidden="until-found">
+        <div class="card">
+          <p>pense a ça texture</p>
+            <a class="btn_Question" href="#Question_6">Question suivante</a>
+        </div>
+      </div>
+
+      <div id=Question_6 hidden="until-found">
+        <div class="card">
+          <p>pense a l'objet</p>
+            <a class="btn_Question" href="#Question_7">Question suivante</a>
+        </div>
+      </div>
+      
+      <div id=Question_7 hidden="until-found">
+        <div class="card">
+          <p>pense a sont materiaux principal</p>
+            <a class="btn_Question" href="#Question_8">Question suivante</a>
+        </div>
+      </div>
+    </section>
+    
+  <div id=Question_8 hidden="until-found">
+    <section id="fin">
+        <p>Si tu a reussi sans aide tu peut passer a l'exercice suivant. </p>
+          <a class="bouton_lancer" href="https://aphantasia-project.netlify.app/niveau1/exercice2"> Bien jouer ^^ </a>
+    </section>
+  </div>
+  
 
 <div id="footer"></div>
 
